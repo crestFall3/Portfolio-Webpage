@@ -1,0 +1,228 @@
+/* ─────────────────────────────────────────────
+   DESIGN TOKENS — Editorial Noir
+   "The Architectural Terminal"
+   Monochromatic · Zero radius · Tonal layering
+───────────────────────────────────────────── */
+:root {
+  /* Core Tones */
+  --bg:              #131313;
+  --surface:         #131313;
+  --surface-low:     #0E0E0E;
+  --surface-hi:      #1A1A1A;
+  --surface-hhi:     #353534;
+
+  /* Text */
+  --text:            #FFFFFF;
+  --text-muted:      #999999;
+  --text-dim:        #C6C6C6;
+
+  /* Ghost Borders & Structure */
+  --ghost:           rgba(71, 71, 71, 0.20);
+  --ghost-hover:     rgba(71, 71, 71, 0.40);
+  --outline:         #474747;
+  --outline-muted:   #919191;
+
+  /* Accent — White is the brand */
+  --accent:          #FFFFFF;
+  --accent-dim:      rgba(255, 255, 255, 0.06);
+  --accent-glow:     rgba(255, 255, 255, 0.04);
+
+  /* Gradient for CTAs */
+  --grad-primary:    linear-gradient(45deg, #FFFFFF, #D4D4D4);
+
+  /* Typography */
+  --font-display:    'Space Grotesk', system-ui, sans-serif;
+  --font-body:       'Inter', system-ui, sans-serif;
+
+  /* Spacing */
+  --radius:          0px;
+  --max-w:           1200px;
+  --nav-h:           72px;
+}
+
+/* ─────────────────────────────────────────────
+   RESET & BASE
+───────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+ul, ol { list-style: none; }
+
+/* ─────────────────────────────────────────────
+   LAYOUT HELPERS
+───────────────────────────────────────────── */
+.container {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+section { padding: 120px 0; }
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+.section-label::before {
+  content: '';
+  width: 2px;
+  height: 8px;
+  background: var(--text);
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--text);
+}
+
+.section-subtitle {
+  margin-top: 20px;
+  font-size: 1rem;
+  color: var(--text-muted);
+  max-width: 520px;
+  line-height: 1.7;
+}
+
+/* ─────────────────────────────────────────────
+   BUTTONS — Editorial Noir
+───────────────────────────────────────────── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  background: var(--text);
+  color: var(--bg);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  border-radius: var(--radius);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.btn-primary:hover {
+  background: #D4D4D4;
+  transform: translateY(-1px);
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  background: transparent;
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: var(--radius);
+  border: 1px solid var(--ghost);
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+.btn-ghost:hover {
+  border-color: var(--ghost-hover);
+  background: var(--accent-dim);
+}
+
+/* ─────────────────────────────────────────────
+   TAGS — Monochrome
+───────────────────────────────────────────── */
+.tag {
+  padding: 4px 10px;
+  background: var(--accent-dim);
+  border: 1px solid var(--ghost);
+  border-radius: var(--radius);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+/* ─────────────────────────────────────────────
+   FADE-IN ANIMATION
+───────────────────────────────────────────── */
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─────────────────────────────────────────────
+   SCROLL PROGRESS — Monochrome
+───────────────────────────────────────────── */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 1px;
+  width: 0%;
+  background: var(--text);
+  z-index: 9999;
+  transition: width 0.1s linear;
+}
+
+/* ─────────────────────────────────────────────
+   BACK TO TOP — Editorial
+───────────────────────────────────────────── */
+.back-to-top {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 44px;
+  height: 44px;
+  background: var(--text);
+  color: var(--bg);
+  border: none;
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 500;
+}
+.back-to-top.visible { opacity: 1; transform: translateY(0); }
+.back-to-top:hover { background: #D4D4D4; }
+
+/* ─────────────────────────────────────────────
+   RESPONSIVE OVERRIDES
+───────────────────────────────────────────── */
+@media (max-width: 768px) {
+  section { padding: 80px 0; }
+}
