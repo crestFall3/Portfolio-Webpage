@@ -107,7 +107,7 @@ class Scoreboard:
     title: 'Pixel Paradise',
     description: 'A multi-page anime-themed website featuring informational sections about Anime, Manga, and Light Novels. Built with a focus on semantic HTML and custom CSS layouts.',
     tags: ['HTML', 'CSS', 'Responsive Design'],
-    demoUrl: 'https://p1-acme-1.vercel.app/',
+    demoUrl: 'https://pixel-paradise-2.vercel.app/',
     sourceUrl: 'https://github.com/crestFall3/acme-landing-page',
     codePlaceholder: `/* Style for Pixel Paradise Logo */
 #pixel {
