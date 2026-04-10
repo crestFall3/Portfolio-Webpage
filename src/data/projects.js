@@ -89,6 +89,7 @@ class Scoreboard:
     title: 'Invoice Generator',
     description: 'A professional invoice creation tool with real-time calculations. Features customizable company branding, dynamic line items, and automatic tax/discount processing.',
     tags: ['HTML', 'CSS', 'JavaScript'],
+    demoUrl: 'https://invoice-generator-web-app-qjvx.vercel.app/',
     sourceUrl: 'https://github.com/crestFall3/Invoice-Generator-web-app',
     codePlaceholder: `const updateAmount = () => {
   const quantity = Number(quantityInput.value) || 0;
@@ -100,5 +101,23 @@ class Scoreboard:
   });
   updateSubtotal();
 };`,
+  },
+  {
+    id: 'acme',
+    title: 'Pixel Paradise',
+    description: 'A multi-page anime-themed website featuring informational sections about Anime, Manga, and Light Novels. Built with a focus on semantic HTML and custom CSS layouts.',
+    tags: ['HTML', 'CSS', 'Responsive Design'],
+    demoUrl: 'https://p1-acme-1.vercel.app/',
+    sourceUrl: 'https://github.com/crestFall3/acme-landing-page',
+    codePlaceholder: `/* Style for Pixel Paradise Logo */
+#pixel {
+  color: deepskyblue;
+}
+
+header {
+  background-color: #35424A;
+  color: white;
+  border-bottom: deepskyblue 3px solid;
+}`,
   },
 ];
